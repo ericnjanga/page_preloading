@@ -48,10 +48,11 @@ sources = {
 	//'coffee' 	: ['components/coffee/tagline.coffee'],
 	'sass' 		: ['components/sass/style.scss'],
 	'js' 		: [
-					'components/scripts/rclick.js',
-					'components/scripts/pixgrid.js',
-					'components/scripts/tagline.js',
-					'components/scripts/template.js'
+					'components/scripts/main.js'
+					'components/scripts/pathloader.js',
+					// 'components/scripts/pixgrid.js',
+					// 'components/scripts/tagline.js',
+					// 'components/scripts/template.js'
 				],
 	'html' 		: [outputDir+'*.html'],
 	//'json' 		: [outputDir+'js/*.json']
@@ -99,7 +100,7 @@ gulp.task('compass', function(){
 		.pipe(gulp.dest(destinations['css']))
 		.pipe(connect.reload()) //keeps track of any compass activities
 });
-
+   
 
 //watch some activities and trigger some tasks in response ........................
 gulp.task('watch', function(){

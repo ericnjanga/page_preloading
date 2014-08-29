@@ -1,0 +1,107 @@
+
+//Both, the logo and the loader will be positioned 
+//absolutely and we’ll stretch them over the viewport:
+.ip-logo,
+.ip-loader {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+//let’s just set the logo to 100% height and translate it 25% 
+//so that the logo SVG stays in the middle of the page:
+.ip-logo {
+    top: 0;
+    height: 100%;
+    transform: translate3d(0,25%,0);
+}
+
+//We position the loader element at the bottom of the viewport:
+.ip-loader {
+    bottom: 20%;
+}
+
+
+
+
+
+
+.browser {
+    margin: 0 auto;
+    padding-top: 8%;
+    min-height: 400px;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 8px;
+    background: #fff url(../images/browser.png) no-repeat 50% 0;
+    background-size: 100%;
+    color: #d3d3d3;
+}
+
+
+
+
+
+.box {
+    float: left;
+    padding: 3.5em;
+    width: 33.3%;
+    font-size: 0.7em;
+    line-height: 1.5;
+    p {
+	    font-family: 'Blokk', Arial, sans-serif;
+	}
+}
+
+
+
+
+
+[class^="icon-"]::before, 
+[class*=" icon-"]::before {
+    display: block;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border-radius: 5px;
+    background: #dfdfdf;
+    color: #fff;
+    text-align: center;
+    text-transform: none;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 5em;
+    font-family: 'feather';
+    line-height: 1;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+ 
+.icon-bell:before {
+    content: "\e006";
+}
+ 
+.icon-cog:before {
+    content: "\e023";
+}
+ 
+.icon-heart:before {
+    content: "\e024";
+}
+
+
+
+
+
+
+
+
+
+
+
+

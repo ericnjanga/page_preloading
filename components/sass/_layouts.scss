@@ -1,0 +1,132 @@
+
+
+//We want the header to fill all the viewport initially
+.ip-header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    min-height: 480px;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+	
+	//remove any margins from the logo headline
+    h1 {
+	    margin: 0;
+	}
+
+	//The SVGs will be displayed as block element and we center 
+	//it horizontally with the auto margin:
+	.ip-inner {
+	    display: block;
+	    margin: 0 auto;
+	}
+	
+	
+	.ip-logo{
+		//The logo SVG should be responsive but not become too big 
+		//or too small. So, beside a percentage value as the width, 
+		//we also set a max and min width
+		svg{ 
+		    min-width: 320px;
+		    max-width: 480px;
+		    width: 25%;
+
+			//Since we’ve added the logo SVG inline, 
+			//we can directly style the color of the path:
+		    path{
+		    	fill: #ef6e7e;
+		    }
+		}
+	}
+	
+	.ip-loader{
+		//And the same holds for the loader:
+		svg{    
+		    path{
+		    	fill: none;
+    			stroke-width: 6;
+		    }  
+		    //The first path has a gray fill:
+		    path.ip-loader-circlebg{
+		    	stroke: #ddd;
+		    }
+		    //And the second path will have the progress transition 
+		    //that we will control in our JS. But here, we’ll define 
+		    //the transition of the stroke-dashoffset:
+		    path.ip-loader-circle{
+		    	transition: stroke-dashoffset 0.2s;
+    			stroke: #ef6e7e;
+		    }
+		}
+	}
+}
+
+
+
+
+//And now, we’l style the content of the page, 
+//which is all wrapped in the ip-main division:
+.ip-main {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 160px 0 10em 0;
+    max-width: 1100px;
+    width: 90%;
+	
+	//The headline will be sized with vw which will make it responsive:
+    h2 {
+	    margin: 0;
+	    padding: 0.5em 0 1em;
+	    color: #be4856;
+	    text-align: center;
+	    font-size: 4.25em;
+	    font-size: 4vw;
+	    line-height: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

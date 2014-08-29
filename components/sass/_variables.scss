@@ -1,0 +1,21 @@
+//I'll import fonts here
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Blokk';
+    src: url('../fonts/blokk/BLOKKRegular.eot');
+    src: url('../fonts/blokk/BLOKKRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/blokk/BLOKKRegular.woff') format('woff'),
+         url('../fonts/blokk/BLOKKRegular.svg#BLOKKRegular') format('svg');
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'feather';
+    src:url('../fonts/feather/feather.eot?-9jv4cc');
+    src:url('../fonts/feather/feather.eot?#iefix-9jv4cc') format('embedded-opentype'),
+        url('../fonts/feather/feather.woff?-9jv4cc') format('woff'),
+        url('../fonts/feather/feather.ttf?-9jv4cc') format('truetype'),
+        url('../fonts/feather/feather.svg?-9jv4cc#feather') format('svg');
+}

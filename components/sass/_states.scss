@@ -1,111 +1,83 @@
 
 
 
-//we will control the firing of animations by adding classes to the main container.
+//--------------------------[animations]--------------------------
 
-//The initial animation of the header elements will make them move in from the bottom:
-.loading .ip-logo,
-.loading .ip-loader {
-    opacity: 1;
-    animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
-}
-
-
-.loading {
-	.ip-loader { 
-    	animation-delay: 0.2s;
+/* Initial animation of header elements */
+.loading{
+	.ip-logo, .ip-loader {
+		opacity: 1;
+		-webkit-animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
+		animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
+	}   
+	.ip-loader {
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
 	}
 }
 
 
-@keyframes animInitialHeader {
-    from { 
-        opacity: 0; 
-        transform: translate3d(0,800px,0); 
-    }
-}
-
-@keyframes animLoadedLogo {
-    to { 
-        transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); 
-    }
-}
-
-@keyframes animLoadedLoader {
-    to { 
-        opacity: 0; 
-        transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); 
-    }
-}
-
-@keyframes animLoadedHeader {
-    to { transform: translate3d(0,-100%,0); }
-}
-
-@keyframes animLoadedContent {
-    from { 
-        opacity: 0; 
-        transform: translate3d(0,200px,0); 
-    }
-}
-
-
-
-
-
-//we need another “state” which will be switched to, once that 
-//progress animation is done. We will give the class loaded to 
-//the container and apply the following animations:
+/* Header elements when loading finishes */
 .loaded{
-	.ip-logo, .ip-loader { 
-    	opacity: 1;
+	.ip-logo, .ip-loader {
+		opacity: 1;
 	}
-
 	.ip-logo {
-	    transform-origin: 50% 0;
-	    animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
-	}
-	.ip-logo svg path {
-	    transition: all 0.5s ease 0.3s;
-	    fill: #fff;
+		-webkit-transform-origin: 50% 0;
+		transform-origin: 50% 0;
+		-webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+		animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+
+		/* Change the color of the logo */
+		svg {
+			path {
+				-webkit-transition: all 0.5s ease 0.3s;
+				transition: all 0.5s ease 0.3s;
+				fill: #fff; 
+			}
+		}
 	}
 	.ip-loader {
-	    animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+		-webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+		animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
 	}
-	//The loader element moves up, scales down and fades out.
+	/* Header animation when loading finishes */
 	.ip-header {
-	    animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+		-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+		animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
 	}
 
 
-	/* Content animations:
-		Here, you can do a lot of creative effects. This of course, 
-		all depends on what content you have on the page. In our case, 
-		we want to fade the elements in while moving them up from below:
-	*/
+	/* Content animations */
 	.ip-main h2,
 	.ip-main .browser,
 	.ip-main .browser .box,
 	.codrops-demos {
-	    animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
+		-webkit-animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
+		animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
 	}
-	
-	//The slight delay for the boxes in the browser division, 
-	//will create a nifty extra effect.
+
 	.ip-main .browser,
 	.ip-main .browser .box:first-child {
-	    animation-delay: 0.1s;
+		-webkit-animation-delay: 0.1s;
+		animation-delay: 0.1s;
 	}
-
-	.ip-main .browser .box:nth-child(2) {
-	    animation-delay: 0.15s;
+	
+	.ip-main{
+		.browser{
+			.box:nth-child(2) {
+				-webkit-animation-delay: 0.15s;
+				animation-delay: 0.15s;
+			}
+			.box:nth-child(3) {
+				-webkit-animation-delay: 0.2s;
+				animation-delay: 0.2s;
+			}
+		}
 	}
-	 
-	.ip-main .browser .box:nth-child(3) {
-	    animation-delay: 0.2s;
-	}
-
-}//.loaded
+	
+}
+//--------------------------[animations]--------------------------
 
 
 
@@ -113,17 +85,10 @@
 
 
 
-
-
-
-//In order to avoid problems with scrolling and gaps at the 
-//bottom of the page, we need to switch the positioning of 
-//the header from fixed to absolute. This, we can control 
-//by adding a class to the body (or any parent) once all 
-//the animations are done. With the help of that class, we switch the positioning:
+/* Change layout class for header */
 .layout-switch {
-	.ip-header { 
-    	position: absolute;
+	.ip-header {
+		position: absolute;
 	}
 }
 
@@ -132,20 +97,76 @@
 
 
 
-//Last, but not least, we have to take care of the large headline and the
-//boxes for smaller screens:
+/* Media queries */ 
 @media screen and (max-width: 45em) {
- 
-    .ip-main h2 {
-        font-size: 2.25em;
-        font-size: 10vw;
-    }
- 
-    .box {
-        width: 100%;
-    }
- 
+
+	.ip-main h2 {
+		font-size: 2.25em;
+		font-size: 10vw;
+	}
+
+	.box {
+		width: 100%%;
+	}
+
 }
+
+
+
+
+
+
+//--------------------------[keyframes]--------------------------
+@-webkit-keyframes animInitialHeader {
+	from { opacity: 0; -webkit-transform: translate3d(0,800px,0); }
+}
+
+@keyframes animInitialHeader {
+	from { opacity: 0; -webkit-transform: translate3d(0,800px,0); transform: translate3d(0,800px,0); }
+}
+
+
+@-webkit-keyframes animLoadedLogo {
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); }
+}
+
+@keyframes animLoadedLogo {
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); }
+}
+
+
+@-webkit-keyframes animLoadedLoader {
+	to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
+}
+
+@keyframes animLoadedLoader {
+	to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
+}
+
+
+@-webkit-keyframes animLoadedHeader {
+	to { -webkit-transform: translate3d(0,-100%,0); }
+}
+
+@keyframes animLoadedHeader {
+	to { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
+}
+
+
+@-webkit-keyframes animLoadedContent {
+	from { opacity: 0; -webkit-transform: translate3d(0,200px,0); }
+}
+
+@keyframes animLoadedContent {
+	from { opacity: 0; -webkit-transform: translate3d(0,200px,0); transform: translate3d(0,200px,0); }
+}
+//--------------------------[keyframes]--------------------------
+
+
+
+
+
+
 
 
 

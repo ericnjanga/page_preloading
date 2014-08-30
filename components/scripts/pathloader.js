@@ -33,28 +33,6 @@ PathLoader.prototype.setProgressFn = function( fn ) {
 }
 
 
-//we are not preloading anything but instead we simulate a loading animation
-//by setting a random value between 0 and 1 throughout a set of time
-//intervals:
-var simulationFn = function(instance) {
-    var progress = 0,
-        interval = setInterval( function() {
-            progress = Math.min( progress + Math.random() * 0.1, 1 );
-            instance.setProgress( progress );
-            // reached the end
-            if( progress === 1 ) {
-                clearInterval( interval );
-            }
-        }, 100 );
-};
-
-
-var loader = new PathLoader([pathselector]);
-loader.setProgressFn(simulationFn);
-
-
-
-
 
 
 

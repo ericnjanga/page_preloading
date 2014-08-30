@@ -8,41 +8,42 @@
   height: 100%;
   background: #f1f1f1;
 }
-/* line 14, ../components/sass/_layouts.scss */
+/* line 13, ../components/sass/_layouts.scss */
 .ip-header h1 {
   margin: 0;
 }
-/* line 20, ../components/sass/_layouts.scss */
+/* line 17, ../components/sass/_layouts.scss */
 .ip-header .ip-inner {
   display: block;
   margin: 0 auto;
 }
-/* line 30, ../components/sass/_layouts.scss */
+/* line 23, ../components/sass/_layouts.scss */
 .ip-header .ip-logo svg {
   min-width: 320px;
   max-width: 480px;
   width: 25%;
 }
-/* line 37, ../components/sass/_layouts.scss */
+/* line 28, ../components/sass/_layouts.scss */
 .ip-header .ip-logo svg path {
   fill: #ef6e7e;
 }
-/* line 46, ../components/sass/_layouts.scss */
+/* line 36, ../components/sass/_layouts.scss */
 .ip-header .ip-loader svg path {
   fill: none;
   stroke-width: 6;
 }
-/* line 51, ../components/sass/_layouts.scss */
+/* line 40, ../components/sass/_layouts.scss */
 .ip-header .ip-loader svg path.ip-loader-circlebg {
   stroke: #ddd;
 }
-/* line 57, ../components/sass/_layouts.scss */
+/* line 43, ../components/sass/_layouts.scss */
 .ip-header .ip-loader svg path.ip-loader-circle {
+  -webkit-transition: stroke-dashoffset 0.2s;
   transition: stroke-dashoffset 0.2s;
   stroke: #ef6e7e;
 }
 
-/* line 70, ../components/sass/_layouts.scss */
+/* line 58, ../components/sass/_layouts.scss */
 .ip-main {
   overflow: hidden;
   margin: 0 auto;
@@ -50,7 +51,7 @@
   max-width: 1100px;
   width: 90%;
 }
-/* line 78, ../components/sass/_layouts.scss */
+/* line 65, ../components/sass/_layouts.scss */
 .ip-main h2 {
   margin: 0;
   padding: 0.5em 0 1em;
@@ -72,19 +73,20 @@
   pointer-events: none;
 }
 
-/* line 17, ../components/sass/_modules.scss */
+/* line 14, ../components/sass/_modules.scss */
 .ip-logo {
   top: 0;
   height: 100%;
+  -webkit-transform: translate3d(0, 25%, 0);
   transform: translate3d(0, 25%, 0);
 }
 
-/* line 24, ../components/sass/_modules.scss */
+/* line 21, ../components/sass/_modules.scss */
 .ip-loader {
   bottom: 20%;
 }
 
-/* line 33, ../components/sass/_modules.scss */
+/* line 38, ../components/sass/_modules.scss */
 .browser {
   margin: 0 auto;
   padding-top: 8%;
@@ -97,7 +99,7 @@
   color: #d3d3d3;
 }
 
-/* line 49, ../components/sass/_modules.scss */
+/* line 53, ../components/sass/_modules.scss */
 .box {
   float: left;
   padding: 3.5em;
@@ -105,12 +107,12 @@
   font-size: 0.7em;
   line-height: 1.5;
 }
-/* line 55, ../components/sass/_modules.scss */
+/* line 60, ../components/sass/_modules.scss */
 .box p {
   font-family: 'Blokk', Arial, sans-serif;
 }
 
-/* line 64, ../components/sass/_modules.scss */
+/* line 70, ../components/sass/_modules.scss */
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
   display: block;
@@ -132,148 +134,160 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 85, ../components/sass/_modules.scss */
+/* line 91, ../components/sass/_modules.scss */
 .icon-bell:before {
   content: "\e006";
 }
 
-/* line 89, ../components/sass/_modules.scss */
+/* line 95, ../components/sass/_modules.scss */
 .icon-cog:before {
   content: "\e023";
 }
 
-/* line 93, ../components/sass/_modules.scss */
+/* line 99, ../components/sass/_modules.scss */
 .icon-heart:before {
   content: "\e024";
 }
 
-/* line 7, ../components/sass/_states.scss */
-.loading .ip-logo,
-.loading .ip-loader {
+/* Initial animation of header elements */
+/* line 8, ../components/sass/_states.scss */
+.loading .ip-logo, .loading .ip-loader {
   opacity: 1;
+  -webkit-animation: animInitialHeader 1s cubic-bezier(0.7, 0, 0.3, 1) both;
   animation: animInitialHeader 1s cubic-bezier(0.7, 0, 0.3, 1) both;
 }
-
-/* line 15, ../components/sass/_states.scss */
+/* line 13, ../components/sass/_states.scss */
 .loading .ip-loader {
+  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 
+/* Header elements when loading finishes */
+/* line 21, ../components/sass/_states.scss */
+.loaded {
+  /* Header animation when loading finishes */
+  /* Content animations */
+}
+/* line 22, ../components/sass/_states.scss */
+.loaded .ip-logo, .loaded .ip-loader {
+  opacity: 1;
+}
+/* line 25, ../components/sass/_states.scss */
+.loaded .ip-logo {
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  /* Change the color of the logo */
+}
+/* line 33, ../components/sass/_states.scss */
+.loaded .ip-logo svg path {
+  -webkit-transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease 0.3s;
+  fill: #fff;
+}
+/* line 40, ../components/sass/_states.scss */
+.loaded .ip-loader {
+  -webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: animLoadedLoader 0.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+/* line 45, ../components/sass/_states.scss */
+.loaded .ip-header {
+  -webkit-animation: animLoadedHeader 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: animLoadedHeader 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+/* line 52, ../components/sass/_states.scss */
+.loaded .ip-main h2,
+.loaded .ip-main .browser,
+.loaded .ip-main .browser .box,
+.loaded .codrops-demos {
+  -webkit-animation: animLoadedContent 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animLoadedContent 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+/* line 60, ../components/sass/_states.scss */
+.loaded .ip-main .browser,
+.loaded .ip-main .browser .box:first-child {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+/* line 68, ../components/sass/_states.scss */
+.loaded .ip-main .browser .box:nth-child(2) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+/* line 72, ../components/sass/_states.scss */
+.loaded .ip-main .browser .box:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+/* Change layout class for header */
+/* line 90, ../components/sass/_states.scss */
+.layout-switch .ip-header {
+  position: absolute;
+}
+
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+  }
+}
 @keyframes animInitialHeader {
   from {
     opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
     transform: translate3d(0, 800px, 0);
+  }
+}
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
   }
 }
 @keyframes animLoadedLogo {
   to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
     transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+  }
+}
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
   }
 }
 @keyframes animLoadedLoader {
   to {
     opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
     transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+  }
+}
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
   }
 }
 @keyframes animLoadedHeader {
   to {
+    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes animLoadedContent {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
   }
 }
 @keyframes animLoadedContent {
   from {
     opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
     transform: translate3d(0, 200px, 0);
   }
 }
-/* line 59, ../components/sass/_states.scss */
-.loaded {
-  /* Content animations:
-  	Here, you can do a lot of creative effects. This of course, 
-  	all depends on what content you have on the page. In our case, 
-  	we want to fade the elements in while moving them up from below:
-  */
-}
-/* line 60, ../components/sass/_states.scss */
-.loaded .ip-logo, .loaded .ip-loader {
-  opacity: 1;
-}
-/* line 64, ../components/sass/_states.scss */
-.loaded .ip-logo {
-  transform-origin: 50% 0;
-  animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-}
-/* line 68, ../components/sass/_states.scss */
-.loaded .ip-logo svg path {
-  transition: all 0.5s ease 0.3s;
-  fill: #fff;
-}
-/* line 72, ../components/sass/_states.scss */
-.loaded .ip-loader {
-  animation: animLoadedLoader 0.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-}
-/* line 76, ../components/sass/_states.scss */
-.loaded .ip-header {
-  animation: animLoadedHeader 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-}
-/* line 86, ../components/sass/_states.scss */
-.loaded .ip-main h2,
-.loaded .ip-main .browser,
-.loaded .ip-main .browser .box,
-.loaded .codrops-demos {
-  animation: animLoadedContent 1s cubic-bezier(0.7, 0, 0.3, 1) both;
-}
-/* line 95, ../components/sass/_states.scss */
-.loaded .ip-main .browser,
-.loaded .ip-main .browser .box:first-child {
-  animation-delay: 0.1s;
-}
-/* line 100, ../components/sass/_states.scss */
-.loaded .ip-main .browser .box:nth-child(2) {
-  animation-delay: 0.15s;
-}
-/* line 104, ../components/sass/_states.scss */
-.loaded .ip-main .browser .box:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-/* line 125, ../components/sass/_states.scss */
-.layout-switch .ip-header {
-  position: absolute;
-}
-
-@media screen and (max-width: 45em) {
-  /* line 139, ../components/sass/_states.scss */
-  .ip-main h2 {
-    font-size: 2.25em;
-    font-size: 10vw;
-  }
-
-  /* line 144, ../components/sass/_states.scss */
-  .box {
-    width: 100%;
-  }
-}
-/* line 5, ../components/sass/_no-js.scss */
-.no-js .ip-header {
-  position: relative;
-  min-height: 0px;
-}
-
-/* line 10, ../components/sass/_no-js.scss */
-.no-js .ip-header .ip-logo {
-  margin-top: 20px;
-  height: 180px;
-  opacity: 1;
-  transform: none;
-}
-
-/* line 17, ../components/sass/_no-js.scss */
-.no-js .ip-header .ip-logo svg path {
-  fill: #fff;
-}
-
 @font-face {
   font-weight: normal;
   font-style: normal;
@@ -287,4 +301,22 @@
   font-family: 'feather';
   src: url("../fonts/feather/feather.eot?-9jv4cc");
   src: url("../fonts/feather/feather.eot?#iefix-9jv4cc") format("embedded-opentype"), url("../fonts/feather/feather.woff?-9jv4cc") format("woff"), url("../fonts/feather/feather.ttf?-9jv4cc") format("truetype"), url("../fonts/feather/feather.svg?-9jv4cc#feather") format("svg");
+}
+/* No JS */
+/* line 5, ../components/sass/_no-js.scss */
+.no-js .ip-header {
+  position: relative;
+  min-height: 0px;
+}
+/* line 9, ../components/sass/_no-js.scss */
+.no-js .ip-header .ip-logo {
+  margin-top: 20px;
+  height: 180px;
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+/* line 16, ../components/sass/_no-js.scss */
+.no-js .ip-header .ip-logo svg path {
+  fill: #fff;
 }

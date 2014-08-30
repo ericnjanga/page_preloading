@@ -1,19 +1,23 @@
 
 
-//If we don’t have JavaScript, we show the state after all animations. 
-//This we can do by setting the header to relative positioning and sizing the logo accordingly:
-.no-js .ip-header {
-    position: relative;
-    min-height: 0px;
+/* No JS */
+.no-js {
+	.ip-header {
+		position: relative;
+		min-height: 0px;
+
+		.ip-logo {
+			margin-top: 20px;
+			height: 180px;
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+
+			svg path {
+				fill: #fff;
+			}
+		}
+	}
 }
  
-.no-js .ip-header .ip-logo {
-    margin-top: 20px;
-    height: 180px;
-    opacity: 1;
-    transform: none;
-}
  
-.no-js .ip-header .ip-logo svg path {
-    fill: #fff;
-}

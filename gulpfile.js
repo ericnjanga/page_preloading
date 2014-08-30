@@ -1,24 +1,23 @@
 /**
 * To install a module as a development dependency (example of browserify):
 * npm install --save-dev browserify
-*/
+--------------
+* To install a module from GIT:
+* npm install --save-dev git://github.com/****.git
+*/ 
 
 //tasks variables ..............................................................
 var gulp 		= require('gulp'),
-	gutil 		= require('gulp-util'),
-	//coffee 		= require('gulp-coffee'),
+	gutil 		= require('gulp-util'), 
 	concat 		= require('gulp-concat'),
 	connect 	= require('gulp-connect'),
 	compass 	= require('gulp-compass'),
-	browserify 	= require('gulp-browserify'),
+	browserify 	= require('gulp-browserify'), 
 	uglify 		= require('gulp-uglify'),//minify all javascript
 	minifyCss 	= require('gulp-minify-css'),//minify all css
 	//decide if a pipe if executed
-	gulpIf 		= require('gulp-if'),//conditionally control the flow of vinyl objects
-	//imageMin 	= require('gulp-imagemin'),//minify all images (require pngcrush plugin)
-	//pngCrusg 	= require('imagemin-pngcrush'),//required by 'gulp-imagemin'
-	minifyHtml 	= require('gulp-minify-html');//minify all html
-	//minifyJSON 	= require('gulp-jsonminify');//minify all json
+	gulpIf 		= require('gulp-if'),//conditionally control the flow of vinyl objects 
+	minifyHtml 	= require('gulp-minify-html');//minify all html 
 
 
 //..............................................................................
@@ -48,14 +47,11 @@ sources = {
 	//'coffee' 	: ['components/coffee/tagline.coffee'],
 	'sass' 		: ['components/sass/style.scss'],
 	'js' 		: [
-					'components/scripts/main.js'
+					'components/scripts/strict-mode.js',
 					'components/scripts/pathloader.js',
-					// 'components/scripts/pixgrid.js',
-					// 'components/scripts/tagline.js',
-					// 'components/scripts/template.js'
+					'components/scripts/main.js' 
 				],
-	'html' 		: [outputDir+'*.html'],
-	//'json' 		: [outputDir+'js/*.json']
+	'html' 		: [outputDir+'*.html'], 
 };
 
 
@@ -64,15 +60,7 @@ var destinations = {
 	'js' 		: outputDir+'js',
 	'css'		: outputDir+'css'		 
 };
-
-
-//coffee task ...................................................................
-// gulp.task('coffee', function(){   gutil.log('....... env='+env+' ..........');
-// 	gulp.src(sources['coffee'])
-// 		.pipe(coffee({ bare:true })
-// 		.on('error', gutil.log))
-// 		.pipe(gulp.dest('components/scripts')) 
-// });
+ 
 
 
 //javascript task ...............................................................
@@ -107,9 +95,7 @@ gulp.task('watch', function(){
 	//gulp.watch(sources['coffee'], ['coffee']);
 	gulp.watch(sources['js'], ['js']);
 	gulp.watch('components/sass/*.scss', ['compass']);
-	gulp.watch('builds/development/*.html', ['html']);
-	//gulp.watch('builds/development/js/*.json', ['json']);
-	//gulp.watch('builds/development/images/**/*.*', ['images']);
+	gulp.watch('builds/development/*.html', ['html']); 
 });
 
 
@@ -131,27 +117,8 @@ gulp.task('html', function(){
 });
 
 
-// //minify all images ...............................................................
-// gulp.task('images', function(){
-// 	gulp.src('builds/development/images/**/*.*')
-// 		.pipe(gulpIf(env==='production', imageMin({
-// 			progressive : true,
-// 			svgPlugins 	: [{ removeViewBox : false }],
-// 			use 		: [pngCrusg()]
-// 		})))
-// 		.pipe(gulpIf(env==='production', gulp.dest(outputDir + 'images')))
-// 		.pipe(connect.reload());
-// }); 
-
-
-// //keep track of any activity on JSON files ........................................
-// gulp.task('json', function(){
-// 	gulp.src('builds/development/js/*.json')
-// 		.pipe(gulpIf(env==='production', minifyJSON()))
-// 		.pipe(gulpIf(env==='production', gulp.dest(outputDir)))
-// 		.pipe(connect.reload());
-// });
+ 
 
 //default tasks ...................................................................
-gulp.task('default', ['html', /*'json', 'coffee',*/ 'js', 'compass', /*'images',*/ 'connect', 'watch']);
+gulp.task('default', ['html', 'js', 'compass', 'connect', 'watch']);
 

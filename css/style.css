@@ -1,102 +1,413 @@
-/*
-Error: Invalid CSS after "		width: 100%%": expected expression (e.g. 1px, bold), was ";"
-        on line 109 of /Users/ericnjanga/Sites/web_tests/page_preloading/components/sass/_states.scss
-        from line 8 of /Users/ericnjanga/Sites/web_tests/page_preloading/components/sass/style.scss
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
-104: 		font-size: 2.25em;
-105: 		font-size: 10vw;
-106: 	}
-107: 
-108: 	.box {
-109: 		width: 100%%;
-110: 	}
-111: 
-112: }
-113: 
-114: 
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
 
-Backtrace:
-/Users/ericnjanga/Sites/web_tests/page_preloading/components/sass/_states.scss:109
-/Users/ericnjanga/Sites/web_tests/page_preloading/components/sass/style.scss:8
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:1163:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/lexer.rb:220:in `expected!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:572:in `assert_expr'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:235:in `times_div_or_mod'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:227:in `plus_or_minus'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:227:in `relational'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:227:in `eq_or_neq'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:227:in `and_expr'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:227:in `or_expr'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:361:in `space'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:345:in `interpolation'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:293:in `expr'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:570:in `assert_expr'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/script/parser.rb:62:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:1025:in `sass_script'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:878:in `value!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:753:in `block in try_declaration'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:1139:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:1139:in `rethrow'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:766:in `try_declaration'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:661:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:650:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:642:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:661:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:653:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:642:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:401:in `media_directive'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:219:in `special_directive'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:194:in `directive'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:660:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:653:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/scss/parser.rb:42:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/engine.rb:299:in `to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:307:in `block in visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:306:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:152:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:151:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/engine.rb:268:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/lib/compass/sass_compiler.rb:40:in `compile!'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/lib/compass/commands/update_project.rb:49:in `perform'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/bin/compass:30:in `block in <top (required)>'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/bin/compass:44:in `call'
-/Library/Ruby/Gems/2.0.0/gems/compass-1.0.1/bin/compass:44:in `<top (required)>'
-/usr/bin/compass:23:in `load'
-/usr/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"		width: 100%%\": expected expression (e.g. 1px, bold), was \";\"\A         on line 109 of /Users/ericnjanga/Sites/web_tests/page_preloading/components/sass/_states.scss\A         from line 8 of /Users/ericnjanga/Sites/web_tests/page_preloading/components/sass/style.scss\A \A 104: 		font-size: 2.25em;\A 105: 		font-size: 10vw;\A 106: 	}\A 107: \A 108: 	.box {\A 109: 		width: 100%%;\A 110: 	}\A 111: \A 112: }\A 113: \A 114: "; }
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../components/sass/_base.scss */
+body {
+  background-color: #ef6e7e;
+}
+
+/* line 4, ../components/sass/_layouts.scss */
+.ip-header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  min-height: 480px;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+}
+/* line 13, ../components/sass/_layouts.scss */
+.ip-header h1 {
+  margin: 0;
+}
+/* line 17, ../components/sass/_layouts.scss */
+.ip-header .ip-inner {
+  display: block;
+  margin: 0 auto;
+}
+/* line 23, ../components/sass/_layouts.scss */
+.ip-header .ip-logo svg {
+  min-width: 320px;
+  max-width: 480px;
+  width: 25%;
+}
+/* line 28, ../components/sass/_layouts.scss */
+.ip-header .ip-logo svg path {
+  fill: #ef6e7e;
+}
+/* line 36, ../components/sass/_layouts.scss */
+.ip-header .ip-loader svg path {
+  fill: none;
+  stroke-width: 6;
+}
+/* line 40, ../components/sass/_layouts.scss */
+.ip-header .ip-loader svg path.ip-loader-circlebg {
+  stroke: #ddd;
+}
+/* line 43, ../components/sass/_layouts.scss */
+.ip-header .ip-loader svg path.ip-loader-circle {
+  -webkit-transition: stroke-dashoffset 0.2s;
+  transition: stroke-dashoffset 0.2s;
+  stroke: #ef6e7e;
+}
+
+/* line 58, ../components/sass/_layouts.scss */
+.ip-main {
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 160px 0 10em 0;
+  max-width: 1100px;
+  width: 90%;
+}
+/* line 65, ../components/sass/_layouts.scss */
+.ip-main h2 {
+  margin: 0;
+  padding: 0.5em 0 1em;
+  color: #be4856;
+  text-align: center;
+  font-size: 4.25em;
+  font-size: 4vw;
+  line-height: 1;
+}
+
+/* line 4, ../components/sass/_modules.scss */
+.ip-logo,
+.ip-loader {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* line 14, ../components/sass/_modules.scss */
+.ip-logo {
+  top: 0;
+  height: 100%;
+  -webkit-transform: translate3d(0, 25%, 0);
+  transform: translate3d(0, 25%, 0);
+}
+
+/* line 21, ../components/sass/_modules.scss */
+.ip-loader {
+  bottom: 20%;
+}
+
+/* line 30, ../components/sass/_modules.scss */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 39, ../components/sass/_modules.scss */
+.browser {
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 auto;
+  padding-top: 8%;
+  min-height: 400px;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 8px;
+  background: #fff url(../images/browser.png) no-repeat 50% 0;
+  background-size: 100%;
+  color: #d3d3d3;
+}
+
+/* line 55, ../components/sass/_modules.scss */
+.box {
+  float: left;
+  padding: 3.5em;
+  width: 33.3%;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+/* line 62, ../components/sass/_modules.scss */
+.box p {
+  font-family: 'Blokk', Arial, sans-serif;
+}
+
+/* line 72, ../components/sass/_modules.scss */
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  display: block;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border-radius: 5px;
+  background: #dfdfdf;
+  color: #fff;
+  text-align: center;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-size: 5em;
+  font-family: 'feather';
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 93, ../components/sass/_modules.scss */
+.icon-bell:before {
+  content: "\e006";
+}
+
+/* line 97, ../components/sass/_modules.scss */
+.icon-cog:before {
+  content: "\e023";
+}
+
+/* line 101, ../components/sass/_modules.scss */
+.icon-heart:before {
+  content: "\e024";
+}
+
+/* Initial animation of header elements */
+/* line 8, ../components/sass/_states.scss */
+.loading .ip-logo, .loading .ip-loader {
+  opacity: 1;
+  -webkit-animation: animInitialHeader 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animInitialHeader 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+/* line 13, ../components/sass/_states.scss */
+.loading .ip-loader {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+/* Header elements when loading finishes */
+/* line 21, ../components/sass/_states.scss */
+.loaded {
+  /* Header animation when loading finishes */
+  /* Content animations */
+}
+/* line 22, ../components/sass/_states.scss */
+.loaded .ip-logo, .loaded .ip-loader {
+  opacity: 1;
+}
+/* line 25, ../components/sass/_states.scss */
+.loaded .ip-logo {
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  /* Change the color of the logo */
+}
+/* line 33, ../components/sass/_states.scss */
+.loaded .ip-logo svg path {
+  -webkit-transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease 0.3s;
+  fill: #fff;
+}
+/* line 40, ../components/sass/_states.scss */
+.loaded .ip-loader {
+  -webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: animLoadedLoader 0.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+/* line 45, ../components/sass/_states.scss */
+.loaded .ip-header {
+  -webkit-animation: animLoadedHeader 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: animLoadedHeader 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+/* line 52, ../components/sass/_states.scss */
+.loaded .ip-main h2,
+.loaded .ip-main .browser,
+.loaded .ip-main .browser .box,
+.loaded .codrops-demos {
+  -webkit-animation: animLoadedContent 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animLoadedContent 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+/* line 60, ../components/sass/_states.scss */
+.loaded .ip-main .browser,
+.loaded .ip-main .browser .box:first-child {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+/* line 68, ../components/sass/_states.scss */
+.loaded .ip-main .browser .box:nth-child(2) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+/* line 72, ../components/sass/_states.scss */
+.loaded .ip-main .browser .box:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+/* Change layout class for header */
+/* line 90, ../components/sass/_states.scss */
+.layout-switch .ip-header {
+  position: absolute;
+}
+
+/* Media queries */
+@media screen and (max-width: 45em) {
+  /* line 104, ../components/sass/_states.scss */
+  .ip-main h2 {
+    font-size: 2.25em;
+    font-size: 10vw;
+  }
+
+  /* line 110, ../components/sass/_states.scss */
+  .box {
+    width: 100%;
+  }
+}
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+  }
+}
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0);
+  }
+}
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+  }
+}
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+  }
+}
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+  }
+}
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+  }
+}
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes animLoadedContent {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+  }
+}
+@keyframes animLoadedContent {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+}
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Blokk';
+  src: url("../fonts/blokk/BLOKKRegular.eot");
+  src: url("../fonts/blokk/BLOKKRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/blokk/BLOKKRegular.woff") format("woff"), url("../fonts/blokk/BLOKKRegular.svg#BLOKKRegular") format("svg");
+}
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'feather';
+  src: url("../fonts/feather/feather.eot?-9jv4cc");
+  src: url("../fonts/feather/feather.eot?#iefix-9jv4cc") format("embedded-opentype"), url("../fonts/feather/feather.woff?-9jv4cc") format("woff"), url("../fonts/feather/feather.ttf?-9jv4cc") format("truetype"), url("../fonts/feather/feather.svg?-9jv4cc#feather") format("svg");
+}
+/* No JS */
+/* line 5, ../components/sass/_no-js.scss */
+.no-js .ip-header {
+  position: relative;
+  min-height: 0px;
+}
+/* line 9, ../components/sass/_no-js.scss */
+.no-js .ip-header .ip-logo {
+  margin-top: 20px;
+  height: 180px;
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+/* line 16, ../components/sass/_no-js.scss */
+.no-js .ip-header .ip-logo svg path {
+  fill: #fff;
+}

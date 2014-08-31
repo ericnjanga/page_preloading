@@ -1,3 +1,73 @@
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../components/sass/_base.scss */
+body {
+  background-color: #ef6e7e;
+}
+
 /* line 4, ../components/sass/_layouts.scss */
 .ip-header {
   position: fixed;
@@ -86,8 +156,16 @@
   bottom: 20%;
 }
 
-/* line 38, ../components/sass/_modules.scss */
+/* line 30, ../components/sass/_modules.scss */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 39, ../components/sass/_modules.scss */
 .browser {
+  overflow: hidden;
+  *zoom: 1;
   margin: 0 auto;
   padding-top: 8%;
   min-height: 400px;
@@ -99,7 +177,7 @@
   color: #d3d3d3;
 }
 
-/* line 53, ../components/sass/_modules.scss */
+/* line 55, ../components/sass/_modules.scss */
 .box {
   float: left;
   padding: 3.5em;
@@ -107,12 +185,12 @@
   font-size: 0.7em;
   line-height: 1.5;
 }
-/* line 60, ../components/sass/_modules.scss */
+/* line 62, ../components/sass/_modules.scss */
 .box p {
   font-family: 'Blokk', Arial, sans-serif;
 }
 
-/* line 70, ../components/sass/_modules.scss */
+/* line 72, ../components/sass/_modules.scss */
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
   display: block;
@@ -134,17 +212,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 91, ../components/sass/_modules.scss */
+/* line 93, ../components/sass/_modules.scss */
 .icon-bell:before {
   content: "\e006";
 }
 
-/* line 95, ../components/sass/_modules.scss */
+/* line 97, ../components/sass/_modules.scss */
 .icon-cog:before {
   content: "\e023";
 }
 
-/* line 99, ../components/sass/_modules.scss */
+/* line 101, ../components/sass/_modules.scss */
 .icon-heart:before {
   content: "\e024";
 }
@@ -227,6 +305,19 @@
   position: absolute;
 }
 
+/* Media queries */
+@media screen and (max-width: 45em) {
+  /* line 104, ../components/sass/_states.scss */
+  .ip-main h2 {
+    font-size: 2.25em;
+    font-size: 10vw;
+  }
+
+  /* line 110, ../components/sass/_states.scss */
+  .box {
+    width: 100%;
+  }
+}
 @-webkit-keyframes animInitialHeader {
   from {
     opacity: 0;

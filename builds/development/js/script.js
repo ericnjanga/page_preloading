@@ -89,7 +89,7 @@ function init() {
 			console.log( '2) support.animations = ', support.animations);
 
 
-			if( support.animations ) {  console.log( animEndEventName, ' ... ', onEndInitialAnimation );
+		if( support.animations ) {  console.log( animEndEventName, ' ... ', onEndInitialAnimation );
             this.removeEventListener( animEndEventName, onEndInitialAnimation );
         }
  

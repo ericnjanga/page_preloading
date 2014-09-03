@@ -1,6 +1,6 @@
 #Page preloading
 
-Page template completely preloaded via CSS3 animations, SVG and JavaScript (coffee script, jQuery). Fallbacks are used for non compliant browsers (Modernizr library).
+Page template completely preloaded via CSS3 animations, SVG and JavaScript (jQuery). Fallbacks are used for non compliant browsers (Modernizr library).
 
 ##Note:
 This small application is a remake of codedrop tutorial: https://github.com/codrops/PagePreloadingEffect.
